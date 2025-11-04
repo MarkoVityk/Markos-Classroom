@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+  
+
+██╗    ██╗   ██╗
+██║    ██║   ██║
+██║    ██║   ██║
+██║    ╚██╗ ██╔╝
+███████╗╚████╔╝ 
+╚══════╝ ╚═══╝  
+                
+                        
+
+By LupineVault.com
+All images and code are owned by LupineVault (lupinevault.com) and associated developers.
+© 2025 LupineVault and all associated developers.
+
+UV Static 2.0
+-
+Developed by technonyte0
+
+Marko - tysm to these people for making this i would have probably take like a year to make this if this didnt exist, so check out the github here
+https://github.com/rhenryw/UV-Static-2.0
+this has been modified to fit the website but thank you to them so much bro
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marko's Classroom - Proxy</title>
+    <script src="check.js" defer></script>
+    <script defer src="scripts/lstimer.js"></script>
+
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/browser.css" />
+    
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/vanjs-org/van/public/van-1.5.2.nomodule.min.js"
+    ></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="scripts/tabs.mjs" type="module" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/gh/tf7software/Font-Awesome-pro-cdn@main/js/all.js"></script>
+    <style>
+      body {padding: 0;margin: 0;}
+      /* Logo sizing: keeps the image proportional and aligned inside header buttons */
+      .logo-img { height: 28px; width: auto; display: inline-block; vertical-align: middle; }
+      /* Slightly larger on high-density or larger header layouts */
+      @media (min-width: 900px) {
+        .logo-img { height: 34px; }
+      }
+    </style>
+    <link rel="icon" href="/s/dogfavi.png">
+  </head>
+
+  <body>
+    <script>
+      window.addEventListener('load', function() {
+        alert("THIS IS A WORK IN PROGRESS (and new)");
+        alert("to exit press the icon on the top left");
+      });
+    </script>
+    <div id="small-screen-overlay">
+      UV Static 2.0 doesn't support smaller screens. Please use UV Static 2.0 on a larger screen.
+    </div>
+
+
+  <div id="nav"></div>
+  <div id="main-content"></div>
+
+
+    <div id="tab-view" class=""></div>
+    <div class="sidebar-container">
+      <header>
+        <div class="page-data">
+          <span id="controls">
+            <button onclick="window.location.href='/'">
+              <img src="/s/dog.png" alt="Dog logo" class="logo-img" />
+
+           
+
+              <p class="tooltip">Home</p>
+            </button>
+            <!-- <p class="logo-name">RED Browse</p> -->
+            <span>
+              <button id="page-back">
+                <ion-icon
+                  name="arrow-back-outline"
+                  class="icon hover-focus1"
+                ></ion-icon>
+                <p class="tooltip">Back</p>
+              </button>
+              <button id="page-forward">
+                <ion-icon
+                  name="arrow-forward-outline"
+                  class="icon hover-focus1"
+                ></ion-icon>
+                <p class="tooltip">Forward</p>
+              </button>
+              <button id="page-refresh">
+                <ion-icon
+                  name="refresh-outline"
+                  class="icon hover-focus1"
+                ></ion-icon>
+                <p class="tooltip">Refresh</p>
+              </button>
+              <button id="options-btn">
+                <ion-icon
+                  name="menu-outline"
+                  class="icon hover-focus1"
+                ></ion-icon>
+                <p class="tooltip">Menu</p>
+              </button>
+            </span>
+          </span>
+          <form id="url-form">
+            <input
+              type="text"
+              id="url-input"
+              onfocus="this.setSelectionRange(0, this.value.length)"
+              class="hover-focus2"
+              placeholder="Search or enter URL"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+            />
+          </form>
+          <button id="new-tab" class="hover-focus2">
+            <ion-icon name="add-outline" class="icon"></ion-icon>
+            <span>New Tab</span>
+          </button>
+        </div>
+        <div id="tab-list"></div>
+      </header>
+    </div>
+
+    <div id="menu-overlay">
+      <div class="option" id="devtools-option">Developer Tools</div>
+      <div class="option" id="abc-option">Open in about:blank</div>
+      <div class="option" id="git-option">GitHub</div>
+      <div class="option" id="wisp-option">WISP: (not set)</div>
+    </div>
+    <script>
+      const optionsBtn = document.getElementById("options-btn");
+      const overlay = document.getElementById("menu-overlay");
+      optionsBtn.addEventListener("click", () => {
+        overlay.classList.toggle("active");
+      });
+      // WISP selector: lets user pick a WISP server preset or enter a custom one.
+      (function () {
+        const wispOption = document.getElementById("wisp-option");
+
+        function getShortHost(url) {
+          try {
+            const u = new URL(url);
+            return u.host;
+          } catch {
+            return url;
+          }
+        }
+
+        function updateLabel() {
+          const stored = localStorage.getItem("wispUrl");
+          if (stored) wispOption.textContent = "WISP: " + getShortHost(stored);
+          else wispOption.textContent = "WISP: default (wisp.rhw.one)";
+        }
+
+        wispOption.addEventListener("click", () => {
+          const presets = [
+            { name: "default (wisp.rhw.one)", url: "wss://wisp.rhw.one/" },
+            { name: "anura.pro", url: "wss://anura.pro/" },
+            { name: "terbium.top", url: "wss://wisp.terbiumon.top/wisp/" },
+          ];
+
+          const choice = prompt(
+            `Choose WISP server by number:\n1) ${presets[0].name}\n2) ${presets[1].name}\n3) ${presets[2].name}\n4) Custom URL\n\nEnter 1, 2, 3 or 4`,
+            ""
+          );
+
+          if (!choice) return;
+
+          if (choice === "1" || choice === "2" || choice === "3") {
+            const sel = presets[Number(choice) - 1];
+            localStorage.setItem("wispUrl", sel.url);
+            alert(`WISP set to ${sel.name}, please refresh to apply.`);
+            updateLabel();
+            return;
+          }
+
+          if (choice === "4") {
+            let custom = prompt("Enter custom WSS URL (e.g. wss://example.com/)");
+            if (!custom) return;
+            // Basic normalization
+            if (!custom.startsWith("wss://") && !custom.startsWith("ws://")) {
+              custom = "wss://" + custom;
+            }
+            localStorage.setItem("wispUrl", custom);
+            alert(`WISP set to ${custom}, please refresh to apply.`);
+            updateLabel();
+            return;
+          }
+
+          alert("Invalid choice");
+        });
+
+        // initialize label on load
+        updateLabel();
+      })();
+    </script>
+  </body>
+</html>
