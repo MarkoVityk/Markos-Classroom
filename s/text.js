@@ -1,6 +1,6 @@
-let quotes = ["i love cheese",
+let quotes = [
+    "i love cheese",
     "lebron?",
-    "Forsaken V2",
     "marko and anas worked hard for yall",
     "thanks anas for tickles.store",
     "did you know 1+1=2?",
@@ -18,4 +18,5 @@ let quotes = ["i love cheese",
     "cheddar",
     "WE ARE FORSAKEN",
     "pay me to add smth here cuz why not?",
+    "did you know anas helped?"
 ]

@@ -147,6 +147,9 @@ button:hover, .center-button:hover {
   margin: 20px;
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .center-container {
@@ -264,7 +267,7 @@ button:hover, .center-button:hover {
   max-width: 900px;
   height: 500px;
   margin: 20px auto;
-  border: 2px solid white;
+  border: 0px solid white;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -427,6 +430,17 @@ button:hover, .center-button:hover {
 .smol {
   font-size: 10px;
 }
+.hard-center {
+  /* center the element both vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 900px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
 @keyframes expand-fade {
   0% {
     width: 0;
@@ -438,4 +452,52 @@ button:hover, .center-button:hover {
     height: 300px;
     opacity: 0;
   }
+}
+
+/* Center the server button container inside the game bar and ensure buttons are centered and responsive */
+#server-button-area,
+.server-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  z-index: 3;
+  pointer-events: auto;
+  /* keep buttons from overflowing the header */
+  max-width: calc(100% - 200px);
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+#server-button-area #server-buttons,
+.server-area #server-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.server-btn,
+#server-button-area .server-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.server-btn:hover,
+#server-button-area .server-btn:hover { background: rgba(255,255,255,0.03); }
+
+@media (max-width: 480px) {
+  /* reduce spacing and allow wrapping on very small screens */
+  #server-button-area, .server-area { max-width: calc(100% - 100px); }
+  .server-btn { padding: 6px 10px; font-size: 12px; }
 }

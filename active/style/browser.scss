@@ -5,7 +5,7 @@
 }
 
 .hover-focus1:hover:not(.selectedTab) {
-    background-color: rgba(26, 26, 26, 0.15) !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 .hover-focus2 {
@@ -13,7 +13,7 @@
 }
 
 .hover-focus2:hover:not(.selectedTab) {
-    background-color: rgba(40, 40, 40, 0.25) !important;
+    background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .sidebar-container {
@@ -42,7 +42,7 @@
 }
 
 .sidebar-container header.closed {
-    background: #13101f;
+    background: #000000;
     border: rgba(31, 31, 31, 0.5) 1px solid;
     position: fixed;
 }
@@ -82,7 +82,7 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    background: #464141;
+    background: #000000;
     color: rgba(255, 255, 255, 0.834);
     visibility: hidden;
     opacity: 0;
@@ -123,7 +123,7 @@
 }
 
 .sidebar-container header .page-data #url-form input {
-    background-color: rgba(226, 226, 226, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
     border: none;
     outline: none;
     color: inherit;
@@ -139,7 +139,7 @@
     width: 100%;
     margin-top: 1rem;
     border-radius: 6px;
-    background-color: rgba(226, 226, 226, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
     border: none;
     outline: none;
     color: inherit;

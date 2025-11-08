@@ -1,11 +1,21 @@
-// gamesData.js - generated from games.html
 const games = [
     {
         "name": "Roblox",
-        "gamePage": "game.html?game=g/load/1on1soccer/index.html",
-        "iframe": "/active/uv/service/hvtrs8%2F-6%3B.kp%2Cnmweg%2Cfwn-arpq%2Fc%2F39%3B02%2F%60.jtol",
+        "proxy": "https://69.ip.nowgg.fun/apps/a/19900/b.html",
+        "proxy2": "https://discord.com/login",
+        "proxy3": "https://now.gg/apps/a/19900/b.html",
+        "server": 3,
         "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
         "identifier": "roblox"
+    },
+    {
+        "name": "devmode",
+        "proxy": "https://discord.com/app",
+        "proxy2": "https://rustdesk.com/web",
+        "proxy3": "https://www2.movieorca.com",
+        "server": 3,
+        "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
+        "identifier": "devmode"
     },
     {
         "name": "1 on 1 soccer",
