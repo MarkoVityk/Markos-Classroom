@@ -1,12 +1,12 @@
 particlesJS("particles-js", {
     particles: {
-        number: { value: 100 },
+        number: { value: 70 },
         shape: { type: "circle" },
         opacity: { value: 1 }, 
         size: { value: 2, random: true }, 
         move: {
             enable: true,
-            speed: 8, 
+            speed: 12, 
             straight: false, 
             out_mode: "out"
         },
@@ -72,9 +72,9 @@ window.addEventListener('DOMContentLoaded', function(){
    Notes: adjustments are stepwise (not directly proportional to FPS) and rate-limited.
 */
 (function(){
-    var minParticles = 5;
-    var maxParticles = 100;
-    var step = 5; // how many particles to add/remove per change
+    var minParticles = 10;
+    var maxParticles = 120;
+    var step = 8; // how many particles to add/remove per change
     var adjustCooldown = 1500; // ms between adjustments
     var threshold = 3; // FPS change threshold to trigger adjustments
 

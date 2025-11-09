@@ -228,7 +228,9 @@ var pJS = function(tag_id, params){
   
   
     pJS.fn.canvasPaint = function(){
-      pJS.canvas.ctx.fillRect(0, 0, pJS.canvas.w, pJS.canvas.h);
+      // clear the canvas instead of filling it so the page background (body) remains visible
+      // This keeps the canvas transparent and allows the site background color to show through.
+      pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
     };
   
     pJS.fn.canvasClear = function(){
@@ -420,6 +422,13 @@ var pJS = function(tag_id, params){
       }
   
       pJS.canvas.ctx.fillStyle = color_value;
+      // add a small shadow for a glow effect; derived from particle color
+      try{
+        pJS.canvas.ctx.shadowBlur = Math.min(14, Math.max(4, radius * 0.6));
+        pJS.canvas.ctx.shadowColor = color_value;
+      }catch(e){
+        // some older contexts may not like shadow settings, ignore errors
+      }
       pJS.canvas.ctx.beginPath();
   
       switch(p.shape){
@@ -491,8 +500,13 @@ var pJS = function(tag_id, params){
         pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width;
         pJS.canvas.ctx.stroke();
       }
-      
       pJS.canvas.ctx.fill();
+
+      // reset shadow to avoid affecting other drawings
+      try{
+        pJS.canvas.ctx.shadowBlur = 0;
+        pJS.canvas.ctx.shadowColor = 'rgba(0,0,0,0)';
+      }catch(e){ }
       
     };
   
@@ -689,16 +703,21 @@ var pJS = function(tag_id, params){
           
           /* style */
           var color_line = pJS.particles.line_linked.color_rgb_line;
-          pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
+          var strokeColor = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
+          pJS.canvas.ctx.strokeStyle = strokeColor;
           pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
-          //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
-          
+          // Add a subtle glow to particle links (kept small for perf)
+          try{
+            pJS.canvas.ctx.shadowBlur = Math.min(8, pJS.particles.line_linked.width * 6);
+            pJS.canvas.ctx.shadowColor = strokeColor;
+          }catch(e){ }
           /* path */
           pJS.canvas.ctx.beginPath();
           pJS.canvas.ctx.moveTo(p1.x, p1.y);
           pJS.canvas.ctx.lineTo(p2.x, p2.y);
           pJS.canvas.ctx.stroke();
           pJS.canvas.ctx.closePath();
+          try{ pJS.canvas.ctx.shadowBlur = 0; pJS.canvas.ctx.shadowColor = 'rgba(0,0,0,0)'; }catch(e){ }
   
         }
   
