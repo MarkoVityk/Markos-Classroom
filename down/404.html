@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>markos class</title>
+  <style>
+    /* Fully dark, simple, and human (no flashy AI look) */
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: #000; /* pure dark */
+      color: #e6eef6; /* light text */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+    }
+    .panel {
+      background: rgba(255,255,255,0.02); /* slight contrast on black */
+      border: 1px solid rgba(255,255,255,0.03);
+      padding: 36px;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+    }
+    h1 { margin: 0; font-size: 22px; color: #dfefff; }
+    .status { margin-top: 18px; font-size: 34px; font-weight: 700; letter-spacing: 0.6px; color: #fff; }
+    .status .emph { display: inline-block; background: rgba(255,255,255,0.04); padding: 6px 10px; border-radius: 6px; }
+    p { margin: 14px 0 0; color: #b8c2cc; font-size: 15px; }
+    .important { margin-top: 12px; display: inline-block; color: #cbd5e1; background: rgba(255,255,255,0.02); padding: 8px 10px; border-radius:6px; }
+    footer { margin-top: 18px; color: #8b97a6; font-size: 13px; }
+    a { color: #9fb6ff; text-decoration: underline; }
+    @media (max-width:420px) { .status { font-size: 26px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel" role="main" aria-labelledby="title">
+      <h1 id="title">we down for temp cleaning</h1>
+
+      <div class="status" aria-live="polite">
+        <span class="emph">WE WILL BE BACK TOMORROW</span>
+      </div>
+
+      <p>were doing some maintenance to improve the site this is temporary and the service is not shutting down.</p>
+
+      <div class="important">everything should be back up tomorrow.</div>
+
+      <footer>
+        <div>if you need immediate assistance, contact the site administrator. amatar@tickles.store</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
