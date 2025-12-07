@@ -1,3 +1,4 @@
+// contains all messages on front page
 let quotes = [
     "i love cheese",
     "lebron?",

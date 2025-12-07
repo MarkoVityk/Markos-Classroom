@@ -22,9 +22,6 @@ particlesJS("particles-js", {
     }
 });
 
-// put panic url here
-let PANIC_URL = 'chrome://quit';
-
 function isTypingInField(e){
     var el = e.target;
     if(!el) return false;
@@ -34,13 +31,11 @@ function isTypingInField(e){
     return false;
 }
 
-// Global keydown listener for panic key (backtick / ` )
+// panic key set to ` (next to 1 key)
 window.addEventListener('keydown', function(e){
-    // Ignore when typing in input fields or when modifier keys are pressed
     if(e.ctrlKey || e.altKey || e.metaKey) return;
     if(isTypingInField(e)) return;
 
-    // e.key === '`' for backtick; some older browsers may use e.code === 'Backquote'
     if(e.key === '`' || e.code === 'Backquote'){
         // prevent accidental behavior
         e.preventDefault();
