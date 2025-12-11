@@ -1,3 +1,4 @@
+//particles
 particlesJS("particles-js", {
     particles: {
         number: { value: 70 },
@@ -22,6 +23,7 @@ particlesJS("particles-js", {
     }
 });
 
+// panic key
 function isTypingInField(e){
     var el = e.target;
     if(!el) return false;
@@ -31,7 +33,7 @@ function isTypingInField(e){
     return false;
 }
 
-// panic key set to ` (next to 1 key)
+// also panic key set to ` (next to 1 key)
 window.addEventListener('keydown', function(e){
     if(e.ctrlKey || e.altKey || e.metaKey) return;
     if(isTypingInField(e)) return;
@@ -42,7 +44,7 @@ window.addEventListener('keydown', function(e){
         window.location.href = 'https://classroom.google.com/';
     }
 });
-
+// search bar enter
 window.addEventListener('DOMContentLoaded', function(){
     var searchBar = document.getElementById('searchBar');
     if(searchBar){

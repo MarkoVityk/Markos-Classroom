@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYPYXGT59Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QYPYXGT59Q');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761613789479778" crossorigin="anonymous"></script>
+  
+  <meta charset="UTF-8">
+    <title>Marko's Classroom</title>
+    <link rel="icon" href="/s/dogfavi.png">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/s/particles.js"></script>
+    <script defer src="/s/script.js"></script>
+    <script>
+      // Rotate the side image visually (CSS) and cycle the image source every few seconds
+      (function() {
+        const images = ['/s/ads/1.png','/s/ads/2.png'];
+        let idx = 0;
+        function cycle() {
+          idx = (idx + 1) % images.length;
+          const el = document.getElementById('side-rotating');
+          if (el) el.src = images[idx];
+        }
+        // Change image every 5000ms (1 -> 2 -> 3 -> repeat)
+        document.addEventListener('DOMContentLoaded', () => {
+          setInterval(cycle, 5000);
+        });
+      })();
+    </script>
+    <style>
+    #game {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+    .embed-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .fullscreen-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1acc;
+      padding: 20px;
+      border-radius: 25px;
+      box-shadow: 0 0 15px 5px white;
+      width: fit-content;
+      margin: 20px auto;
+      width: 400%;
+      max-width: 500px;
+    }
+    .game-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #22222270;
+      color: #fff;
+      padding: 0 20px 0 10px;
+      height: 64px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border: 0px solid white;
+      border-bottom: none;
+      max-width: 900px;
+      margin: 20px auto 0 auto;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 2;
+    }
+    .game-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .game-bar-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 0 8px #0008;
+      background: #111;
+    }
+    .game-bar-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 2px #000a;
+      white-space: nowrap;
+    }
+    .game-bar-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .server-area {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 100%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      pointer-events: auto;
+      z-index: 3;
+    }
+    .server-area .server-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 8px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    .server-area .server-btn:hover { background: rgba(255,255,255,0.03); }
+    .game-bar-controls button {
+      box-shadow: 0 2px 8px #0002;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.15s, box-shadow 0.15s, border 0.15s, transform 0.12s cubic-bezier(.4,2,.6,1);
+      padding: 0;
+      margin: 0;
+    }
+    .game-bar-controls button:hover {
+      box-shadow: 0 4px 12px #0003;
+    }
+    .game-bar-controls button:active {
+      transform: scale(0.88);
+    }
+    .game-bar-controls img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      background: none;
+      filter: none;
+    }
+    .embed-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 0 auto 20px auto;
+      border-top: none;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      overflow: hidden;
+      background-color: white;
+      z-index: 1;
+    }
+    #game {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="left-center-image">
+    <img id="side-rotating" src="/s/ads/1.png" alt="oh why tf are u reading this" class="floating-ad">
+  </div>
+  <header class="header nav-container">
+  <a href="/index.html" class="dog-icon-link">
+      <img src="/s/dog.png" class="header-img">
+    </a>
+    <h1 class="header-text">Marko's Classroom</h1>
+    <div class="nav-right-align" style="gap: 10px;">
+            <button class="center-button nav-button-large" onclick="location.href='/active/index.html'">Proxy (NEW)</button>
+            <button class="center-button nav-button-large" onclick="location.href='/s/games.html'">Games</button>
+        </div>
+  </header>
+  <p>&nbsp;</p>
+  <p class="center">BE PATIENT PLEASE</p>
+  <p class="center">warning: THIS DOES NOT WORK</p>
+  <div id="game-bar" class="game-bar">
+    <div class="game-bar-left">
+      <img id="game-bar-img" src="" alt="" class="game-bar-img" style="display:none;">
+      <span id="game-bar-title" class="game-bar-title"></span>
+    </div>
+      <div id="server-button-area" class="server-area"></div>
+      <div class="game-bar-controls">
+        <button onclick="refreshIframe()" title="Refresh"><img src="/s/assets/refresh.png"/></button>
+        <button onclick="toggleFullscreen()" title="Fullscreen"><img src="/s/assets/fullscreen.png"/></button>
+      </div>
+  </div>
+  <div class="embed-container" id="embedWrapper">
+    <iframe id="game" allowfullscreen></iframe>
+  </div>
+  <script src="/active/uv/uv.bundle.js" defer></script>
+  <script src="/active/uv/uv.config.js" defer></script>
+  <script src="/s/gamesData.js"></script>
+  <script type="module">
+    import { getUV } from '/active/scripts/prxy.mjs';
+
+    function getGameByIdentifier(identifier) {
+      if (typeof games === 'undefined') return null;
+      return games.find(g => g.identifier === identifier);
+    }
+
+    async function setGameContent() {
+      const params = new URLSearchParams(window.location.search);
+      const identifier = params.get('game');
+      const proxyParam = params.get('proxy');
+      const nameParam = params.get('name');
+      const imgParam = params.get('img');
+      const gameObj = getGameByIdentifier(identifier);
+      const iframe = document.getElementById("game");
+      const barImg = document.getElementById("game-bar-img");
+      const barTitle = document.getElementById("game-bar-title");
+      const controls = document.querySelector('.game-bar-controls');
+
+      // helper: build server selector buttons when multiple servers are available
+      function clearServerButtons() {
+        const existing = document.getElementById('server-buttons');
+        if (existing) existing.remove();
+      }
+
+      function createServerButtons(count, gameObj, selectedIndex = 1) {
+        clearServerButtons();
+        if (!count || count <= 1) return;
+        const wrap = document.createElement('div');
+        wrap.id = 'server-buttons';
+        wrap.style.display = 'flex';
+        wrap.style.gap = '6px';
+
+        for (let i = 1; i <= count; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = 'Server ' + i;
+          btn.className = 'server-btn';
+          btn.dataset.serverIndex = String(i);
+          btn.style.padding = '6px 8px';
+          btn.style.fontSize = '12px';
+          btn.style.borderRadius = '8px';
+          btn.style.background = i === selectedIndex ? '#4b4b4b' : 'transparent';
+          btn.style.color = 'white';
+          btn.addEventListener('click', async () => {
+            // highlight
+            Array.from(wrap.children).forEach((c) => (c.style.background = 'transparent'));
+            btn.style.background = '#4b4b4b';
+            // pick proxy property name
+            const idx = Number(btn.dataset.serverIndex) || 1;
+            const prop = idx === 1 ? 'proxy' : 'proxy' + idx;
+            const url = gameObj[prop];
+            if (!url) {
+              console.warn('Selected server does not have a proxy URL:', prop);
+              return;
+            }
+            try {
+              const viewUrl = await getUV(url);
+              iframe.src = viewUrl;
+            } catch (err) {
+              console.warn('UV proxy failed for selected server, falling back to direct iframe:', err);
+              iframe.src = url;
+            }
+          });
+          wrap.appendChild(btn);
+        }
+
+          // append to the central server button area
+          const mid = document.getElementById('server-button-area') || controls;
+          mid.appendChild(wrap);
+      }
+
+      // If a proxy param is provided, use the UV proxy flow (getUV)
+      if (proxyParam) {
+        const target = (() => {
+          try { return decodeURIComponent(proxyParam); } catch (e) { return proxyParam; }
+        })();
+
+        try {
+          const viewUrl = await getUV(target);
+          iframe.src = viewUrl;
+        } catch (err) {
+          console.warn('UV proxy failed, falling back to direct iframe:', err);
+          iframe.src = target;
+        }
+
+        if (imgParam) { barImg.src = (() => { try { return decodeURIComponent(imgParam); } catch (e) { return imgParam; } })(); barImg.style.display = ''; }
+        else { barImg.style.display = 'none'; }
+        barTitle.textContent = nameParam ? decodeURIComponent(nameParam) : 'Proxy';
+        return;
+      }
+
+      if (gameObj) {
+        // Prefer an explicit proxy entry if present in gamesData.js
+        if (gameObj.proxy) {
+          // Determine server selection (from URL param or default 1)
+          const serverParam = parseInt(new URLSearchParams(window.location.search).get('server')) || 1;
+          const serverCount = parseInt(gameObj.server) || 1;
+
+          if (serverCount > 1) {
+            // build selector UI and set initial server
+            createServerButtons(serverCount, gameObj, Math.min(Math.max(serverParam,1), serverCount));
+            const sel = Math.min(Math.max(serverParam,1), serverCount);
+            const propName = sel === 1 ? 'proxy' : 'proxy' + sel;
+            const target = gameObj[propName] || gameObj.proxy;
+            try {
+              const viewUrl = await getUV(target);
+              iframe.src = viewUrl;
+            } catch (err) {
+              console.warn('UV proxy failed, falling back to direct iframe:', err);
+              iframe.src = target;
+            }
+          } else {
+            // single server
+            clearServerButtons();
+            const target = gameObj.proxy;
+            try {
+              const viewUrl = await getUV(target);
+              iframe.src = viewUrl;
+            } catch (err) {
+              console.warn('UV proxy failed, falling back to direct iframe:', err);
+              iframe.src = target;
+            }
+          }
+        } else {
+          clearServerButtons();
+          iframe.src = gameObj.iframe || '';
+        }
+        if (gameObj.img) { barImg.src = gameObj.img; barImg.alt = gameObj.name; barImg.style.display = ''; }
+        else { barImg.style.display = 'none'; }
+        barTitle.textContent = gameObj.name || '';
+      } else {
+        iframe.src = "";
+        barImg.style.display = 'none';
+        barTitle.textContent = 'Game not found';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', setGameContent);
+
+    function refreshIframe() {
+      const iframe = document.getElementById("game");
+      if (!iframe) return;
+      // Prefer a programmatic reload via the iframe's window (works when proxied under same-origin)
+      try {
+        if (iframe.contentWindow && iframe.contentWindow.location && typeof iframe.contentWindow.location.reload === 'function') {
+          iframe.contentWindow.location.reload();
+          return;
+        }
+      } catch (e) {
+        // cross-origin or unavailable -> fallback below
+      }
+
+      // Fallback: force a reload by adding a short-lived cache-buster query param.
+      try {
+        const src = iframe.src || '';
+        if (!src) return;
+        const sep = src.includes('?') ? '&' : '?';
+        iframe.src = src + sep + '_=' + Date.now();
+      } catch (e) {
+        // last-resort: assign the same src (may or may not trigger reload)
+        iframe.src = iframe.src;
+      }
+    }
+    function toggleFullscreen() {
+      const iframe = document.getElementById("game");
+      if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+    // Expose functions to global scope for inline `onclick` handlers
+    try {
+      window.refreshIframe = refreshIframe;
+      window.toggleFullscreen = toggleFullscreen;
+    } catch (e) {
+      // ignore if not allowed
+    }
+  </script>
+  <p>&nbsp;</p>
+</body>
+<footer>
+  <p class="footer-text">enjoy the game, <a href="/privacy-policy.html">Privacy Policy</a></p>
+</footer>
+</html> 

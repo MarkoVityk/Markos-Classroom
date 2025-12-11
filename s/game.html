@@ -36,11 +36,6 @@
       })();
     </script>
     <style>
-    #game {
-      width: 100%;
-      height: 500px;
-      border: none;
-    }
     .embed-container {
       position: relative;
       width: 100%;
@@ -83,7 +78,7 @@
       height: 64px;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-      border: 2px solid white;
+      border: 2px solid #ffffff7f;
       border-bottom: none;
       max-width: 900px;
       margin: 20px auto 0 auto;
@@ -149,13 +144,16 @@
       max-width: 900px;
       height: 500px;
       margin: 0 auto 20px auto;
+      border-left: 2px solid #ffffff21;
+      border-right: 2px solid #ffffff21;
+      border-bottom: 2px solid #ffffff21;
       border-top: none;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       overflow: hidden;
-      background-color: white;
+      background-color: #ffffff70;
       z-index: 1;
     }
     #game {
@@ -163,18 +161,18 @@
       height: 100%;
       border: none;
       display: block;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      background: #fff;
+      background: #ffffff70;
     }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
   <div class="left-center-image">
-    <img id="side-rotating" src="/s/ads/1.png" alt="i think the ads are broken" class="floating-ad">
+    <!--<img id="side-rotating" src="/s/ads/1.png" alt="i think the ads are broken" class="floating-ad"> no more ads u happy?-->
   </div>
   <header class="header nav-container">
     <a href="/index.html" class="dog-icon-link">
@@ -182,7 +180,7 @@
         </a>
     <h1 class="header-text">Marko's Classroom</h1>
     <div class="nav-right-align" style="gap: 10px;">
-            <!--<button class="center-button nav-button-large" onclick="location.href='active/index.html'">Proxy (NEW)</button>-->
+            <button class="center-button nav-button-large" onclick="location.href='active/index.html'">Proxy</button>
             <button class="center-button nav-button-large" onclick="location.href='/s/games.html'">Games</button>
         </div>
   </header>
